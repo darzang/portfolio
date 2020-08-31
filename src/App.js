@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from './Projects';
+import Courses from './Courses';
 import SocialProfiles from './SocialProfiles';
 import profile from './assets/profile.png';
 import './index.css';
@@ -27,6 +28,8 @@ class App extends Component {
                             <div><button onClick={this.toggleBio}>Read more</button></div>
                         )
                 }
+                <hr /> 
+                <Courses />
                 <hr /> 
                 <Projects />
                 <hr /> 
