@@ -21,6 +21,7 @@ const COURSES = [
             'Mechanics, Electronics, Computer Science, Renewable Energy',
             'Mechatronics, Embedded Systems, Electrical Engineering',
             'C, C++, Java, HTML/CSS + Javascript, C# ' 
+            // Add moutons
         ]
     }
 
