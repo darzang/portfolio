@@ -9,7 +9,7 @@ class Experience extends Component {
                 <div>
                     <h3 className="elementTitle">{title}</h3>
                     <p>{company} - {date}</p>
-                    <i>{companyIntro}</i>
+                    <i style= {{ fontSize: "15px"}}>{companyIntro}</i>
                 </div>
                 <div >
                     <div>

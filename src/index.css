@@ -14,10 +14,13 @@ body {
     font-size: 20px;
     padding: 2.5%;
     font-family: RobotoCondensend;
-    ;
+    height: 100%;
 }
 h1, h2, h3, h4, h5 {
     font-family: 'Indie Flower', cursive;
+}
+h1 {
+    font-size: 40px;
 }
 
 .profile {
@@ -30,3 +33,11 @@ h1, h2, h3, h4, h5 {
     font-size: 30px;
 }
 
+.sectionTitle{
+    font-size: 35px;
+}
+
+.BioButton{
+    /* width: 300px; */
+    vertical-align: middle;
+}

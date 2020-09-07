@@ -3,19 +3,22 @@ import Experiences from './Experiences';
 import Projects from './Projects';
 import Courses from './Courses';
 import SocialProfiles from './SocialProfiles';
-import profile from './assets/profile.png';
+// import profile from './assets/profileImage.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+import Button from 'react-bootstrap/Button';
 
 class App extends Component {
     state = {
-        displayBio: false,
+        displayAbout: false,
         displayEducation: false,
         displayExperiences: false,
         displayProjects: false,
     };
 
-    toggleBio = () => {
-        this.setState({ displayBio: !this.state.displayBio });
+
+    toggleAbout = () => {
+        this.setState({ displayAbout: !this.state.displayAbout });
     }
     toggleEducation = () => {
         console.log("Toggle Education");
@@ -27,55 +30,85 @@ class App extends Component {
     toggleProjects = () => {
         this.setState({ displayProjects: !this.state.displayProjects });
     }
+
     render() {
         return (
             <div>
-                <img src={profile} alt='profile-picture' className='profile' />
-                <h1>Hey</h1>
-                <p>I'm Mathieu</p>
-                <p></p>
-                {
+                {/* <img src={profile} alt='profile-picture' className='profile' /> */}
+                <h1>Hey, I'm Mathieu</h1>
+                {/* {
                     this.state.displayBio ? (
                         <div>
-                            <p>Bio will come here at some point</p>
-                            <div><button onClick={this.toggleBio}>Show less</button></div>
+                            <p>Originally from a small French island close to the east coast of Canada,
+                            I studied in the sout-west of France and the UK before working for about a year in Berlin.</p>
+                            <p>From Web Development to Robotics, Video Game or Virtual Environments, I have always been interested in programming and its various applications</p>
+                            <p>If I'm not coding, you can find me either on a slackline, reading a book, playing guitar, relaxing a hammock or playing video games.</p>
+                            <Button className="BioButton" variant="outline-info" onClick={this.toggleBio} block>Show less</Button>
                         </div>
                     ) : (
-                            <div><button onClick={this.toggleBio}>Read more</button></div>
+                            <Button className="BioButton" variant="outline-info" onClick={this.toggleBio} block>Read more</Button>
                         )
-                }
+                }                */}
+                <hr  style={{ marginTop: 20 }}/> 
+                <div>
+                    <h2 className="sectionTitle" onClick={this.toggleAbout}> About</h2>
+                    {
+                        this.state.displayAbout ? (
+                            <div>
+                                <p>Originally from a small French island on the east coast of Canada,
+                                    I studied in the sout-west of France and the UK before working for about a year in Berlin.</p>
+                                <p>From Web Development to Robotics, Video Game or Virtual Environments, I have always been interested in programming and its various applications</p>
+                                <p>If I'm not coding, you can find me either on a slackline, reading a book, playing guitar, relaxing a hammock or playing video games.</p>
+                            </div>
+                        ) : (null)
+                    }
+                </div>
                 <hr />
                 <div>
-                    <h2 onClick={this.toggleEducation}> Education</h2>
+                    <h2 className="sectionTitle" onClick={this.toggleEducation}> Education</h2>
                     {
                         this.state.displayEducation ? (
-                            <Courses />
+                            <div>
+                                <hr />
+                                <Courses />
+                            </div>
                         ) : (null)
                     }
                 </div>
                 <hr />
                 <div>
-                    <h2 onClick={this.toggleExperiences}> Experiences</h2>
+                    <h2 className="sectionTitle" onClick={this.toggleExperiences}> Experiences</h2>
                     {
                         this.state.displayExperiences ? (
-                            <Experiences />
+                            <div>
+                                <hr />
+                                <Experiences />
+                            </div>
                         ) : (null)
                     }
                 </div>
                 <hr />
                 <div>
-                    <h2 onClick={this.toggleProjects}> Projects</h2>
+                    <h2 className="sectionTitle" onClick={this.toggleProjects}> Projects</h2>
                     {
                         this.state.displayProjects ? (
-                            <Projects />
+                            <div>
+                                <hr />
+                                <Projects />
+                            </div>
                         ) : (null)
                     }
                 </div>
                 <hr />
-                <SocialProfiles />
+                <div style={{ bottom: 0 }} >
+                    <h2 className="sectionTitle">Contact</h2>
+                    {
+                        <SocialProfiles />
+                    }
+                </div>
             </div>
         )
     }
 }
-// <hr /> horizontal line
 export default App;
+
