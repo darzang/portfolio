@@ -3,7 +3,6 @@ import SOCIAL_PROFILES from './data/socialProfiles';
 
 class SocialProfile extends Component {
     render() {
-        console.log("this.props", this.props);
         const { image, link } = this.props.profile;
         return (
             <div style={{ display: 'inline-block', width: 50, margin: 10}}>
